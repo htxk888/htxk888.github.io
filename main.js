@@ -25,8 +25,8 @@ document.getElementById('releaseLink').addEventListener('click', function(event)
 
     if (currentIndex < domains.length) {
         const domain = domains[currentIndex];
-        document.getElementById('releasedDomain').textContent = `正在打开: ${domain}`;
-        window.location.href = `http://${domain}`; // 确保使用绝对路径跳转
+        document.getElementById('releasedDomain').textContent = `访问中: ${domain}`;
+        window.location.href = domain; // 使用完整域名跳转
     } else {
         document.getElementById('releasedDomain').textContent = '所有域名已释放完毕';
     }
