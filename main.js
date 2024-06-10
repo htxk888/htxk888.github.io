@@ -5,29 +5,26 @@ document.getElementById('releaseLink').addEventListener('click', function(event)
     let lastReleaseDate = localStorage.getItem('lastReleaseDate');
     let currentIndex = localStorage.getItem('currentIndex');
 
-    const today = new Date().toISOString().split('T')[0];
+    // 设置固定日期（例如：2024年6月11日）
+    const fixedDate = new Date('2024-06-11');
 
-    if (!lastReleaseDate || !currentIndex) {
-        lastReleaseDate = today;
-        currentIndex = 0;
+    // 获取今天的日期
+    const today = new Date();
+
+    // 如果是固定日期，更新索引
+    if (!lastReleaseDate || lastReleaseDate !== fixedDate.toISOString().split('T')[0]) {
+        // 更新索引
+        currentIndex = (parseInt(currentIndex, 10) || 0) % domains.length;
+        // 更新上次释放日期为固定日期
+        lastReleaseDate = fixedDate.toISOString().split('T')[0];
         localStorage.setItem('lastReleaseDate', lastReleaseDate);
-        localStorage.setItem('currentIndex', currentIndex);
-    } else {
-        currentIndex = parseInt(currentIndex, 10);
-    }
-
-    if (today !== lastReleaseDate) {
-        lastReleaseDate = today;
-        currentIndex++;
-        localStorage.setItem('lastReleaseDate', lastReleaseDate);
+        // 更新当前索引
         localStorage.setItem('currentIndex', currentIndex);
     }
 
-    if (currentIndex < domains.length) {
-        const domain = domains[currentIndex];
-        document.getElementById('releasedDomain').textContent = `访问中: ${domain}`;
-        window.location.href = domain; // 使用完整域名跳转
-    } else {
-        document.getElementById('releasedDomain').textContent = '所有域名已释放完毕';
-    }
+    // 获取当前应该释放的域名
+    const domain = domains[currentIndex];
+    document.getElementById('releasedDomain').textContent = `马上访问: ${domain}`;
+    // 跳转到该域名
+    window.location.href = domain;
 });
