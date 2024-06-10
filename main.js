@@ -25,9 +25,9 @@ document.getElementById('releaseLink').addEventListener('click', function(event)
 
     if (currentIndex < domains.length) {
         const domain = domains[currentIndex];
-        document.getElementById('releasedDomain').textContent = `正在跳转到最新网址:http:// ${domain}`;
-        window.location.href = domain; // 跳转到释放的域名
+        document.getElementById('releasedDomain').textContent = `正在打开: ${domain}`;
+        window.location.href = `http://${domain}`; // 确保使用绝对路径跳转
     } else {
-        document.getElementById('releasedDomain').textContent = '请访问riniba.com';
+        document.getElementById('releasedDomain').textContent = '所有域名已释放完毕';
     }
 });
