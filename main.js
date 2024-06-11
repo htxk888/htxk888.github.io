@@ -6,7 +6,7 @@ document.getElementById('releaseLink').addEventListener('click', function(event)
     let currentIndex = localStorage.getItem('currentIndex');
 
     // 设置固定日期（例如：2024年6月11日）
-    const fixedDate = new Date('2024-06-11');
+    const fixedDate = new Date('2024-06-09');
 
     // 获取今天的日期
     const today = new Date();
