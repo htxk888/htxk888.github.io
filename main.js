@@ -24,7 +24,7 @@ document.getElementById('releaseLink').addEventListener('click', function(event)
 
     // 获取当前应该释放的域名
     const domain = domains[currentIndex];
-    document.getElementById('releasedDomain').textContent = `马上访问: ${domain}`;
+    document.getElementById('releasedDomain').textContent = `正在带您进入: ${domain}`;
     // 跳转到该域名
     window.location.href = domain;
 });
