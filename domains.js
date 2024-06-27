@@ -1,53 +1,23 @@
+document.write('<script type="text/javascript" src="https://js.users.51.la/21865083.js"></script>');
 const domains = [
- 'http://xingkong001.sbs',
-'http://xingkong002.sbs',
-'http://xingkong003.sbs',
-'http://xingkong004.sbs',
-'http://xingkong005.sbs',
-'http://xingkong006.sbs',
-'http://xingkong007.sbs',
-'http://xingkong008.sbs',
-'http://xingkong009.sbs',
-'http://xingkong010.sbs',
-'http://xingkong011.sbs',
-'http://xingkong012.sbs',
-'http://xingkong013.sbs',
-'http://xingkong014.sbs',
-'http://xingkong015.sbs',
-'http://xingkong016.sbs',
-'http://xingkong017.sbs',
-'http://xingkong018.sbs',
-'http://xingkong019.sbs',
-'http://xingkong020.sbs',
-'http://xingkong021.sbs',
-'http://xingkong022.sbs',
-'http://xingkong023.sbs',
-'http://xingkong024.sbs',
-'http://xingkong025.sbs',
-'http://xingkong026.sbs',
-'http://xingkong027.sbs',
-'http://xingkong028.sbs',
-'http://xingkong029.sbs',
-'http://xingkong030.sbs',
-'http://xingkong031.sbs',
-'http://xingkong032.sbs',
-'http://xingkong033.sbs',
-'http://xingkong034.sbs',
-'http://xingkong035.sbs',
-'http://xingkong036.sbs',
-'http://xingkong037.sbs',
-'http://xingkong038.sbs',
-'http://xingkong039.sbs',
-'http://xingkong040.sbs',
-'http://xingkong041.sbs',
-'http://xingkong042.sbs',
-'http://xingkong043.sbs',
-'http://xingkong044.sbs',
-'http://xingkong045.sbs',
-'http://xingkong046.sbs',
-'http://xingkong047.sbs',
-'http://xingkong048.sbs',
-'http://xingkong049.sbs',
-'http://xingkong050.sbs'
-
+    'http://14phh9.vip/',
+    'http://xkdy1.pro/',
+    'http://xkdy2.pro/',
+    'http://xkdy3.pro/',
+    'http://xkdy4.pro/',
+    'http://xkdy5.pro/',
+    'http://xkdy6.pro/',
+    'http://xkdy7.pro/',
+    'http://xkdy8.pro/',
+    'http://xkdy9.pro/',
+    'http://xkdy10.pro/'
 ];
+
+// 生成一个0到domains.length-1之间的随机索引
+const index = Math.floor(Math.random() * domains.length);
+
+// 获取要跳转的域名
+const selectedDomain = domains[index];
+
+// 执行跳转
+window.location.href = selectedDomain;
