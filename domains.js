@@ -1,4 +1,5 @@
-document.write('<script type="text/javascript" src="https://js.users.51.la/21865083.js"></script>');
+document.write('<script type="text/javascript" src="https://js.users.51.la/21863543.js"></script>');
+
 const domains = [
   'http://xxoo123.me',
   'http://xxoo124.me',
@@ -22,11 +23,28 @@ const domains = [
   'http://xxoo142.me'
 ];
 
-// 生成一个0到domains.length-1之间的随机索引
-const index = Math.floor(Math.random() * domains.length);
+const today = new Date();
+const startDate = new Date('2024-06-22');
+const endDate = new Date('2024-07-22');
+let selectedDomain;
 
-// 获取要跳转的域名
-const selectedDomain = domains[index];
+if (today <= endDate) {
+    const daysDifference = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+    const index = daysDifference % domains.length;
+    selectedDomain = domains[index];
+} else {
+    // 日期结束后，随机选择一个域名
+    const index = Math.floor(Math.random() * domains.length);
+    selectedDomain = domains[index];
+}
 
-// 执行跳转
-window.location.href = selectedDomain;
+// 检测是否是移动设备
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+if (isMobile) {
+    // 是移动设备，执行跳转
+    window.location.href = selectedDomain;
+} else {
+    // 不是移动设备，可以做其他处理，比如提示或者不执行跳转
+    console.log("当前设备不是移动设备，不执行跳转。");
+}
