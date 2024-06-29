@@ -24,7 +24,7 @@ const domains = [
 ];
 
 const today = new Date();
-const startDate = new Date('2024-06-22');
+const startDate = new Date('2024-07-01');
 const endDate = new Date('2024-07-22');
 let selectedDomain;
 
