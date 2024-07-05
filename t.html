@@ -40,12 +40,55 @@
     </style>
 </head>
 <body>
-    <div>
-        <a href="#" id="releaseLink">点此进入</a>
-        <p id="releasedDomain"></p>
-    </div>
+   
 
-    <script src="domains.js"></script>
-    <script src="main.js"></script>
+    <script>// 固定日期
+const targetDate = new Date('2024-04-10');
+
+// 获取当前日期
+const currentDate = new Date();
+
+// 计算日期差（毫秒）
+const timeDiff = currentDate.getTime() - targetDate.getTime();
+
+// 计算天数差（注意这里除以的是毫秒数中的天数）
+const dayDiff = Math.max(Math.ceil(timeDiff / (1000 * 60 * 60 * 24)), 0);
+
+// 使用 padStart 方法在数字前添加前导零
+const daysPadded = String(dayDiff).padStart(3, '0');
+
+// 构建域名
+const generatedDomain = `https://vip.avxx-${daysPadded}.xyz/`;
+
+// 域名列表（包括泛解析）
+const domainList = [
+    'dq74.com',
+     '*.qq396.com',
+    'qq396.com',
+    '*.dq74.com' // 泛解析示例，匹配所有.example.net的子域名
+];
+
+// 获取当前域名
+const currentDomain = window.location.hostname;
+
+// 检查当前域名是否在列表中（包括泛解析）
+const isInDomainList = domainList.some(domain => {
+    if (domain.startsWith('*.')) {
+        const domainSuffix = domain.slice(2); // 去掉通配符部分
+        return currentDomain.endsWith(domainSuffix);
+    } else {
+        return currentDomain === domain;
+    }
+});
+
+// 如果不在列表里，则跳转到生成的域名
+if (!isInDomainList) {
+    window.location.href = generatedDomain;
+} else {
+    // 如果在列表里，则跳转到谷歌或者你需要的其他网址
+    window.location.href = 'https://htxk888.github.io/';
+}
+</script>
+
 </body>
 </html>
